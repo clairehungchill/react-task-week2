@@ -1,0 +1,307 @@
+:root {
+  /* 容器屬性 */
+  --bg-card: #ffffff; /* 卡片背景 */
+  --border-color: rgba(181, 156, 133, 0.35); /* 邊框顏色 */
+  --border-radius-lg: 16px; /* 大圓角：面板、卡片 */
+  --border-radius-sm: 12px; /* 小圓角：按鈕 */
+}
+
+html,
+body {
+  min-height: 100vh;
+  background: #efe7da;
+}
+
+/* 登入頁面 */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fdf6ea;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  background-color: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.login-title {
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #3a3a3a;
+}
+
+.login-btn {
+  padding: 12px 0;
+  background-color: #91aed0;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.login-btn:hover {
+  background-color: #7e9bc2;
+  color: #3a3a3a;
+}
+
+/* 產品列表 */
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* 產品列表小卡 */
+.product-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+}
+
+/* 產品列表小卡－左側資訊區－價格 */
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+/* 產品列表小卡－左側資訊區－價格－原價 */
+.origin {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* 產品列表小卡－左側資訊區－價格－售價 */
+.sale {
+  font-size: 16px;
+  font-weight: 800;
+  color: #2b2b2b;
+}
+
+/* 產品列表小卡－左側資訊區－庫存 */
+.stock {
+  margin-top: 6px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* 產品列表小卡－右側狀態區 */
+.card-side {
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+/* 產品列表小卡－右側狀態區－已啟用/未啟用 */
+.status {
+  padding: 6px 10px;
+  background-color: rgba(181, 156, 133, 0.12);
+  border: 1px solid rgba(181, 156, 133, 0.25);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #7b6352;
+}
+
+/* 產品列表小卡－右側狀態區－已啟用 */
+.status--on {
+  background-color: rgba(228, 200, 137, 0.22);
+  border: 1px solid rgba(228, 200, 137, 0.45);
+  color: #7b6352;
+}
+
+/* 產品列表小卡－右側狀態區－未啟用 */
+.status--off {
+  background-color: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: rgba(0, 0, 0, 0.55);
+}
+
+/* 產品列表小卡－右側狀態區－查看細節按鈕 */
+.action-btn {
+  /* padding: 10px 14px;
+  background-color: rgba(181, 156, 133, 0.22);
+  border: 0;
+  border-radius: 12px;
+  font-weight: 800;
+  color: #7b6352;
+  transition: background-color 0.2s, transform 0.2s;
+  cursor: pointer; */
+
+  padding: 10px 14px;
+  background-color: transparent;
+  border: 1px solid #91aed0;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  font-size: 14px;
+  color: #91aed0;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.action-btn:hover {
+  /* background-color: rgba(181, 156, 133, 0.32);
+  transform: translateY(-1px); */
+
+  background-color: #91aed0;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.action-btn:active {
+  /* background-color: rgba(181, 156, 133, 0.45); */
+
+  transform: translateY(0px);
+}
+
+/* 產品列表小卡－右側狀態區－查看細節按鈕點擊後 */
+.action-btn.is-selected {
+  background-color: rgba(145, 174, 208, 0.35);
+  color: #2f4b63;
+}
+
+/* 單一產品細節卡片 */
+.product-detail {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+/* 單一產品細節卡片－卡片內容區 */
+.product-detail .card-body {
+  padding: 20px 22px;
+}
+
+/* 單一產品細節卡片－首行－產品名稱＋狀態 */
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* 單一產品細節卡片－首行－狀態 */
+.detail-title {
+  margin: 0;
+}
+
+/* 單一產品細節卡片－更多圖片 */
+.thumb {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 8px;
+}
+
+/* 單一產品細節卡片－更多圖片點擊後 */
+.thumb.is-selected {
+  border-color: #e4c889;
+}
+
+/* 產品後台－頂部列 */
+.admin-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  margin: 24px 0 16px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+}
+
+/* 產品後台－頂部列－產品後台標題 */
+.admin-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #3a3a3a;
+}
+
+.admin-topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 產品後台－頂部列－【按鈕：重新驗證】 */
+.btn-system-check {
+  padding: 6px 12px;
+  background-color: transparent;
+  border: 1px solid #91aed0;
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+  color: #91aed0;
+  transition: all 0.15s ease;
+}
+
+.btn-system-check:hover {
+  background-color: #91aed0;
+  color: #fff;
+}
+
+/* 產品後台－頂部列－右側狀態區－已登入/未登入 */
+.login-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3a3a3a;
+}
+
+.login-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.login-dot--on {
+  background-color: #e4c889;
+  box-shadow: 0 0 0 3px rgba(228, 200, 137, 0.35);
+}
+
+.login-dot--off {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+/* 產品後台－頁面外框 */
+.admin-shell {
+  padding-bottom: 40px;
+}
+
+/* 產品後台－主面板（容納產品列表、單一產品細節的白色區塊） */
+.admin-panel {
+  padding: 28px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+}
+
+/* 產品後台－區塊標題（產品列表、單一產品細節） */
+.section-title {
+  margin: 0 0 14px;
+  font-size: 22px;
+  font-weight: 800;
+  color: #2b2b2b;
+  letter-spacing: 0.2px;
+}
